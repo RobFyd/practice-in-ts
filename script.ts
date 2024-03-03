@@ -16,3 +16,9 @@ const car = {
 
 console.log(car.engine);
 
+const adultness = age >= 18 ? 'adult' : 'minor';
+
+switch (adultness) {
+    case "adult":
+}
+
