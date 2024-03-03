@@ -7,3 +7,5 @@ const hello = (name, country) => {
 
 hello('John', 'USA');
 
+console.log('ts installed!');
+

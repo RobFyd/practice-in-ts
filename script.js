@@ -4,3 +4,4 @@ var hello = function (name, country) {
     console.log("Hello ".concat(name, " from ").concat(country));
 };
 hello('John', 'USA');
+console.log('ts installed!');
