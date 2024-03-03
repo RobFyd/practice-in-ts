@@ -6,3 +6,4 @@ const hello = (name, country) => {
 };
 
 hello('John', 'USA');
+
