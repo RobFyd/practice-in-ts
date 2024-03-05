@@ -55,3 +55,16 @@ const newNumber = [12321];
 newNumber.forEach((number) => {
     console.log(number);
 });
+
+
+// type object:
+
+const newHello = (person: { name: string, age?: number }) => {
+    console.log(`Hello ${person.name}${
+        person.age ? `, you are ${person.age} years old` : ""
+    }!`);
+};
+
+newHello({ name: 'Bob', age: 45 });
+
+// age? - optional parameter

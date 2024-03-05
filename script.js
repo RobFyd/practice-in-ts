@@ -31,3 +31,9 @@ var newNumber = [12321];
 newNumber.forEach(function (number) {
     console.log(number);
 });
+// type object:
+var newHello = function (person) {
+    console.log("Hello ".concat(person.name).concat(person.age ? ", you are ".concat(person.age, " years old") : "", "!"));
+};
+newHello({ name: 'Bob', age: 45 });
+// age? - optional parameter
