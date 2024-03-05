@@ -65,6 +65,16 @@ const newHello = (person: { name: string, age?: number }) => {
     }!`);
 };
 
-newHello({ name: 'Bob', age: 45 });
+newHello({ name: 'Bob', age: 45 });   // age? - optional parameter
 
-// age? - optional parameter
+
+// when the value has two different types:
+
+const writeToConsole = (value: string | number) => {
+    console.log(value);
+}
+
+writeToConsole('Hello');
+writeToConsole(123);
+
+

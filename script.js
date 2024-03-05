@@ -35,5 +35,10 @@ newNumber.forEach(function (number) {
 var newHello = function (person) {
     console.log("Hello ".concat(person.name).concat(person.age ? ", you are ".concat(person.age, " years old") : "", "!"));
 };
-newHello({ name: 'Bob', age: 45 });
-// age? - optional parameter
+newHello({ name: 'Bob', age: 45 }); // age? - optional parameter
+// when the value has two different types:
+var writeToConsole = function (value) {
+    console.log(value);
+};
+writeToConsole('Hello');
+writeToConsole(123);
