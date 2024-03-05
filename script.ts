@@ -41,3 +41,17 @@ const welcome = (name: string, age: number) => {
 }
 
 welcome('John', 25);
+
+const getEUR = (plnAmount: number, rate: number): number => plnAmount / rate;
+
+console.log(getEUR(100, 4.71));
+
+const bye = (): void => {
+    console.log('Goodbye!');
+}
+
+const newNumber = [12321];
+
+newNumber.forEach((number) => {
+    console.log(number);
+});

@@ -22,3 +22,12 @@ var welcome = function (name, age) {
     console.log("Hello ".concat(name, ", you are ").concat(age, " years old"));
 };
 welcome('John', 25);
+var getEUR = function (plnAmount, rate) { return plnAmount / rate; };
+console.log(getEUR(100, 4.71));
+var bye = function () {
+    console.log('Goodbye!');
+};
+var newNumber = [12321];
+newNumber.forEach(function (number) {
+    console.log(number);
+});
