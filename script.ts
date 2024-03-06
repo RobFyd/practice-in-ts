@@ -77,3 +77,11 @@ const writeToConsole = (value: string | number) => {
 
 writeToConsole("Hello");
 writeToConsole(123);
+
+
+// all types have a method which is needed
+
+const getLenght = (value: number[] | string) => value.length;
+
+console.log(getLenght([1, 2, 3, 4, 5]));
+console.log(getLenght("Hello"));
