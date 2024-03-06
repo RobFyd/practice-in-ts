@@ -11,15 +11,18 @@ hello("John", "USA");
 
 // types
 
+
 // type primitive (number, string, boolean, null, undefined, symbol, void):
 
 const getArea = (width: number, height: number) => width * height;
 
 console.log(getArea(5, 10));
 
+
 // type array:
 
 const numbers = [1, 2, 3, 4, 5]; // number[]
+
 
 // type any:
 
@@ -29,6 +32,7 @@ let car: any = {
 
 // car = "Mercedes";
 // car.year = 2020; // no error, try avoid using any
+
 
 // type function:
 
@@ -52,6 +56,7 @@ newNumber.forEach((number) => {
   console.log(number);
 });
 
+
 // type object:
 
 const newHello = (person: { name: string; age?: number }) => {
@@ -63,6 +68,7 @@ const newHello = (person: { name: string; age?: number }) => {
 };
 
 newHello({ name: "Bob", age: 45 }); // age? - optional parameter
+
 
 // when the value has two different types:
 
@@ -85,3 +91,15 @@ const getLenght = (value: number[] | string) => value.length;
 
 console.log(getLenght([1, 2, 3, 4, 5]));
 console.log(getLenght("Hello"));
+
+
+// alias type:
+
+type Car = {
+    brand: string;
+    year: number;
+};
+
+const showCar = (car: Car) => {
+    console.log(`Brand: ${car.brand}`);
+};

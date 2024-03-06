@@ -51,3 +51,6 @@ writeToConsole(123);
 var getLenght = function (value) { return value.length; };
 console.log(getLenght([1, 2, 3, 4, 5]));
 console.log(getLenght("Hello"));
+var showCar = function (car) {
+    console.log("Brand: ".concat(car.brand));
+};
