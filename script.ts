@@ -1,16 +1,15 @@
 // Run: tsc script.ts
-console.log('Hello TypeScript!');
+console.log("Hello TypeScript!");
 
 const hello = (name: string, country: string) => {
-    console.log(`Hello ${name} from ${country}`);
+  console.log(`Hello ${name} from ${country}`);
 };
 
-hello('John', 'USA');
+hello("John", "USA");
 
 // tsc script.ts --target es2015 --strict - to compile with es2015 and strict mode
 
 // types
-
 
 // type primitive (number, string, boolean, null, undefined, symbol, void):
 
@@ -18,63 +17,63 @@ const getArea = (width: number, height: number) => width * height;
 
 console.log(getArea(5, 10));
 
-
 // type array:
 
 const numbers = [1, 2, 3, 4, 5]; // number[]
 
-
 // type any:
 
 let car: any = {
-    brand: 'BMW'
+  brand: "BMW",
 };
 
-car = 'Mercedes';
-car.year = 2020;     // no error, try avoid using any
-
+// car = "Mercedes";
+// car.year = 2020; // no error, try avoid using any
 
 // type function:
 
 const welcome = (name: string, age: number) => {
-    console.log(`Hello ${name}, you are ${age} years old`);
-}
+  console.log(`Hello ${name}, you are ${age} years old`);
+};
 
-welcome('John', 25);
+welcome("John", 25);
 
 const getEUR = (plnAmount: number, rate: number): number => plnAmount / rate;
 
 console.log(getEUR(100, 4.71));
 
 const bye = (): void => {
-    console.log('Goodbye!');
-}
+  console.log("Goodbye!");
+};
 
 const newNumber = [12321];
 
 newNumber.forEach((number) => {
-    console.log(number);
+  console.log(number);
 });
-
 
 // type object:
 
-const newHello = (person: { name: string, age?: number }) => {
-    console.log(`Hello ${person.name}${
-        person.age ? `, you are ${person.age} years old` : ""
-    }!`);
+const newHello = (person: { name: string; age?: number }) => {
+  console.log(
+    `Hello ${person.name}${
+      person.age ? `, you are ${person.age} years old` : ""
+    }!`
+  );
 };
 
-newHello({ name: 'Bob', age: 45 });   // age? - optional parameter
-
+newHello({ name: "Bob", age: 45 }); // age? - optional parameter
 
 // when the value has two different types:
 
 const writeToConsole = (value: string | number) => {
-    console.log(value);
-}
+  if (typeof value === "string") {
+    console.log(value.toLocaleUpperCase());
+    return;
+  }
 
-writeToConsole('Hello');
+    console.log(value.toFixed(2));
+};
+
+writeToConsole("Hello");
 writeToConsole(123);
-
-
