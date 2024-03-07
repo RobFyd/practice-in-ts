@@ -150,12 +150,33 @@ const nameInputElement = document.querySelector(".js-name") as HTMLInputElement;
 interface Motorbike {
     brand: string;
     color: "red" | "blue" | "green";
+    city: "Warsaw" | "Berlin" | "Paris";
+    new: boolean;  // it same as new: true | false;
 }
 
-const motorbike: Motorbike = {
+const motorbike = {
     brand: "Yamaha",
     // color: "white", // error
     color: "red",
+    city: "Warsaw",
+    new: true,
+} as const;     // typescript knows that the object is constant
+
+console.log(motorbike.brand, motorbike.color, motorbike.city, motorbike.new);
+
+const buyMotorbike = (motorbike: Motorbike) => {};
+
+buyMotorbike(motorbike);
+
+
+// null and undefined:
+
+const hideElement = (element: Element) => {
+    element.classList.add("hidden");
 };
 
-console.log(motorbike.brand, motorbike.color);
+const element = document.querySelector(".js-element");
+
+if (element !== null) {
+    hideElement(element);
+}

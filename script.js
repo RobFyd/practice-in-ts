@@ -78,5 +78,17 @@ var motorbike = {
     brand: "Yamaha",
     // color: "white", // error
     color: "red",
+    city: "Warsaw",
+    new: true,
+}; // typescript knows that the object is constant
+console.log(motorbike.brand, motorbike.color, motorbike.city, motorbike.new);
+var buyMotorbike = function (motorbike) { };
+buyMotorbike(motorbike);
+// null and undefined:
+var hideElement = function (element) {
+    element.classList.add("hidden");
 };
-console.log(motorbike.brand, motorbike.color);
+var element = document.querySelector(".js-element");
+if (element !== null) {
+    hideElement(element);
+}
