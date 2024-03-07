@@ -105,6 +105,57 @@ type Car = {
 //     year: number;
 // }
 
-const showCar = (car: Car) => {
-    console.log(`Brand: ${car.brand}, year: ${car.year}`);
+const car2: Car = {
+    brand: "BMW",
+    year: 2020,
 };
+
+console.log(car2.brand, car2.year);
+
+const showCar = (car2: Car) => {
+    console.log(`Brand: ${car2.brand}, year: ${car.year}`);
+};
+
+showCar(car2);
+
+// alias type interface:
+
+interface Animal {
+    name: string;
+}
+
+interface Dog extends Animal {
+    bark: () => void;
+}
+
+const dog: Dog = {
+    bark: () => {
+        console.log("Woof!");
+    },
+    name: "Burek",
+}
+
+console.log(dog.name);
+console.log(dog.bark());
+
+
+// type assertion:
+
+const nameInputElement = document.querySelector(".js-name") as HTMLInputElement;
+// it helps typescript to understand that it is an input element
+
+
+// literal types:
+
+interface Motorbike {
+    brand: string;
+    color: "red" | "blue" | "green";
+}
+
+const motorbike: Motorbike = {
+    brand: "Yamaha",
+    // color: "white", // error
+    color: "red",
+};
+
+console.log(motorbike.brand, motorbike.color);

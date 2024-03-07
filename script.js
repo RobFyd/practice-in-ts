@@ -55,6 +55,28 @@ console.log(getLenght("Hello"));
 //     brand: string;
 //     year: number;
 // }
-var showCar = function (car) {
-    console.log("Brand: ".concat(car.brand, ", year: ").concat(car.year));
+var car2 = {
+    brand: "BMW",
+    year: 2020,
 };
+console.log(car2.brand, car2.year);
+var showCar = function (car2) {
+    console.log("Brand: ".concat(car2.brand, ", year: ").concat(car.year));
+};
+showCar(car2);
+var dog = {
+    bark: function () {
+        console.log("Woof!");
+    },
+    name: "Burek",
+};
+console.log(dog.name);
+console.log(dog.bark());
+// type assertion:
+var nameInputElement = document.querySelector(".js-name");
+var motorbike = {
+    brand: "Yamaha",
+    // color: "white", // error
+    color: "red",
+};
+console.log(motorbike.brand, motorbike.color);
