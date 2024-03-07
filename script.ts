@@ -100,6 +100,11 @@ type Car = {
     year: number;
 };
 
+// interface ICar {            // the same as type often with "I" prefix
+//     brand: string;
+//     year: number;
+// }
+
 const showCar = (car: Car) => {
-    console.log(`Brand: ${car.brand}`);
+    console.log(`Brand: ${car.brand}, year: ${car.year}`);
 };

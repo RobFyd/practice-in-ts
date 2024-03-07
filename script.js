@@ -51,6 +51,10 @@ writeToConsole(123);
 var getLenght = function (value) { return value.length; };
 console.log(getLenght([1, 2, 3, 4, 5]));
 console.log(getLenght("Hello"));
+// interface ICar {            // the same as type often with "I" prefix
+//     brand: string;
+//     year: number;
+// }
 var showCar = function (car) {
-    console.log("Brand: ".concat(car.brand));
+    console.log("Brand: ".concat(car.brand, ", year: ").concat(car.year));
 };
