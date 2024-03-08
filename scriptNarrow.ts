@@ -22,5 +22,30 @@
     }
   };
 
-    console.log(getAge({ age: 45 }));
+  console.log(getAge({ age: 45 }));
+}
+
+// array is array?
+{
+  const getLenght = (value: number[] | null) => {
+    if (Array.isArray(value)) {
+      return value.length;
+    }
+
+    return null;
+  };
+
+  console.log(getLenght([1, 2, 3, 4, 5]));
+}
+// second convention - quick escape
+{
+  const getLenght = (value: number[] | null) => {
+    if (!Array.isArray(value)) {
+      return null;
+    }
+
+    return value.length;
+  };
+
+  console.log(getLenght([1, 2, 3, 4]));
 }
