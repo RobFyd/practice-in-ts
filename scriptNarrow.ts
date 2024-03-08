@@ -49,3 +49,19 @@
 
   console.log(getLenght([1, 2, 3, 4]));
 }
+// shortest version
+{
+  const getLenght = (value: number[] | null) => (!value ? null : value.length);
+  console.log(getLenght([1, 2, 3]));
+}
+// when value is falsy (null, undefined, 0, false, NaN, '', "", bigInt(0n))
+{
+  const getLenght = (value: (number | bigint)[] | null) => {
+    if (!value) {
+      return null;
+    }
+
+    return value.length;
+  };
+    getLenght([0n]);
+}

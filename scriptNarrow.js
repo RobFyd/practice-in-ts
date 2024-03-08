@@ -2,7 +2,7 @@
 // Purpose: This file contains code that demonstrates how to use the narrow type assertion in TypeScript.
 // typeof - Narrowing by type
 {
-    var writeToConsole = function (value) {
+    const writeToConsole = (value) => {
         if (typeof value === "number") {
             console.log(value.toFixed(2));
         }
@@ -15,16 +15,16 @@
 }
 // typeof for null gives "object"
 {
-    var getAge = function (person) {
+    const getAge = (person) => {
         if (typeof person === "object") {
-            return person === null || person === void 0 ? void 0 : person.age;
+            return person?.age;
         }
     };
     console.log(getAge({ age: 45 }));
 }
 // array is array?
 {
-    var getLenght = function (value) {
+    const getLenght = (value) => {
         if (Array.isArray(value)) {
             return value.length;
         }
@@ -34,11 +34,26 @@
 }
 // second convention - quick escape
 {
-    var getLenght = function (value) {
+    const getLenght = (value) => {
         if (!Array.isArray(value)) {
             return null;
         }
         return value.length;
     };
     console.log(getLenght([1, 2, 3, 4]));
+}
+// shortest version
+{
+    const getLenght = (value) => (!value ? null : value.length);
+    console.log(getLenght([1, 2, 3]));
+}
+// when value is falsy (null, undefined, 0, false, NaN, '', "", bigInt(0n))
+{
+    const getLenght = (value) => {
+        if (!value) {
+            return null;
+        }
+        return value.length;
+    };
+    getLenght([0n]);
 }
