@@ -78,3 +78,10 @@
         }
     };
 }
+// instanceof
+{
+    const logDate = (date) => {
+        console.log(`Date: ${date instanceof Date ? date.toLocaleDateString() : date}`);
+    };
+    logDate(new Date());
+}

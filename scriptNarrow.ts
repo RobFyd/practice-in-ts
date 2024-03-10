@@ -81,13 +81,24 @@
 {
   type Fish = { swim: () => void };
   type Bird = { fly: () => void };
-  type Human = {fly?: () => void, swim?: () => void};
+  type Human = { fly?: () => void; swim?: () => void };
 
   const move = (animal: Fish | Bird | Human) => {
     if ("swim" in animal) {
       animal.swim?.();
     } else {
-      animal.fly?.();       // optional chaining
+      animal.fly?.(); // optional chaining
     }
   };
+}
+
+// instanceof
+{
+  const logDate = (date: string | Date) => {
+    console.log(
+      `Date: ${date instanceof Date ? date.toLocaleDateString() : date}`
+    );
+  };
+
+  logDate(new Date());
 }
