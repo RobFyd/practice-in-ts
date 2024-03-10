@@ -65,3 +65,14 @@
   };
     getLenght([0n]);
 }
+// watch out for empty string
+{
+  const getLenght = (value: string | null) => {
+    if (value === null) {
+      return null;
+    }
+
+    return value.length;
+  };
+  console.log(getLenght(""));
+}
