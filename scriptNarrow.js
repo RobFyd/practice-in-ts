@@ -67,3 +67,14 @@
     };
     console.log(getLenght(""));
 }
+// in operator
+{
+    const move = (animal) => {
+        if ("swim" in animal) {
+            animal.swim?.();
+        }
+        else {
+            animal.fly?.(); // optional chaining
+        }
+    };
+}

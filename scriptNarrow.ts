@@ -63,7 +63,7 @@
 
     return value.length;
   };
-    getLenght([0n]);
+  getLenght([0n]);
 }
 // watch out for empty string
 {
@@ -75,4 +75,19 @@
     return value.length;
   };
   console.log(getLenght(""));
+}
+
+// in operator
+{
+  type Fish = { swim: () => void };
+  type Bird = { fly: () => void };
+  type Human = {fly?: () => void, swim?: () => void};
+
+  const move = (animal: Fish | Bird | Human) => {
+    if ("swim" in animal) {
+      animal.swim?.();
+    } else {
+      animal.fly?.();       // optional chaining
+    }
+  };
 }
