@@ -115,3 +115,13 @@
 
   console.log(value.toLocaleUpperCase()); // Error: Property 'toLocaleUpperCase' does not exist on type 'string | number'.
 }
+
+// own type guard
+{
+  type Fish = { swim: () => void };
+  type Bird = { fly: () => void };
+
+  let animal: Fish | Bird = getPet();
+
+  const isFish = (pet: Fish | Bird) => "swim" in pet;
+}
