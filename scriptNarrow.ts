@@ -110,4 +110,8 @@
   value = 5; // value is now a number
 
   console.log(value.toFixed(2)); // Error: Property 'toFixed' does not exist on type 'string | number'.
+
+  value = "hello world"; // value is now a string
+
+  console.log(value.toLocaleUpperCase()); // Error: Property 'toLocaleUpperCase' does not exist on type 'string | number'.
 }
