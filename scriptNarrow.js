@@ -85,3 +85,9 @@
     };
     logDate(new Date());
 }
+// a value whose type will depend on luck
+{
+    let value = Math.random() < 0.5 ? 100 : "hello world";
+    value = 5; // value is now a number
+    console.log(value.toFixed(2)); // Error: Property 'toFixed' does not exist on type 'string | number'.
+}
