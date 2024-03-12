@@ -90,4 +90,24 @@
     let value = Math.random() < 0.5 ? 100 : "hello world";
     value = 5; // value is now a number
     console.log(value.toFixed(2)); // Error: Property 'toFixed' does not exist on type 'string | number'.
+    value = "hello world"; // value is now a string
+    console.log(value.toLocaleUpperCase()); // Error: Property 'toLocaleUpperCase' does not exist on type 'string | number'.
+}
+// own type guard
+{
+    const getPet = () => {
+        return Math.random() < 0.5 ? { swim: () => { } } : { fly: () => { } };
+    };
+    let animal = getPet();
+    const isFish = (pet) => "swim" in pet;
+    if (isFish(animal)) {
+        animal;
+    }
+    else {
+        animal;
+    }
+    const pets = [getPet()];
+    const onlyFish = pets.filter(isFish);
+    onlyFish;
+    console.log(onlyFish);
 }

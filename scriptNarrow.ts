@@ -118,10 +118,27 @@
 
 // own type guard
 {
+const getPet = (): Fish | Bird => {
+    return Math.random() < 0.5 ? { swim: () => {} } : { fly: () => {} };
+};
+
   type Fish = { swim: () => void };
   type Bird = { fly: () => void };
 
   let animal: Fish | Bird = getPet();
 
-  const isFish = (pet: Fish | Bird) => "swim" in pet;
+  const isFish = (pet: Fish | Bird): pet is Fish => "swim" in pet;
+
+  if (isFish(animal)) {
+    animal;
+  } else {
+    animal;
+  }
+
+  const pets: (Fish | Bird)[] = [getPet()];
+  const onlyFish = pets.filter(isFish);
+
+  onlyFish;
+
+  console.log(onlyFish);
 }
