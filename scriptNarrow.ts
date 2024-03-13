@@ -118,9 +118,9 @@
 
 // own type guard
 {
-const getPet = (): Fish | Bird => {
+  const getPet = (): Fish | Bird => {
     return Math.random() < 0.5 ? { swim: () => {} } : { fly: () => {} };
-};
+  };
 
   type Fish = { swim: () => void };
   type Bird = { fly: () => void };
@@ -141,4 +141,43 @@ const getPet = (): Fish | Bird => {
   onlyFish;
 
   console.log(onlyFish);
+}
+
+// union of two interfaces - discriminated union
+{
+  interface Circle {
+    kind: "circle";
+    radius: number;
+  }
+
+  interface Square {
+    kind: "square";
+    sideLength: number;
+  }
+
+  type Shape = Circle | Square;
+
+  const getArea = (shape: Shape) => {
+    switch (shape.kind) {
+      case "circle":
+        return Math.PI * shape.radius ** 2;
+
+      case "square":
+        return shape.sideLength ** 2;
+    }
+  };
+
+  const square: Shape = {
+    kind: "square",
+    sideLength: 5,
+  };
+
+  console.log(getArea(square));
+
+  const circle: Shape = {
+    kind: "circle",
+    radius: 5,
+  };
+
+  console.log(getArea(circle));
 }

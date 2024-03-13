@@ -111,3 +111,24 @@
     onlyFish;
     console.log(onlyFish);
 }
+// union of two interfaces - discriminated union
+{
+    const getArea = (shape) => {
+        switch (shape.kind) {
+            case "circle":
+                return Math.PI * shape.radius ** 2;
+            case "square":
+                return shape.sideLength ** 2;
+        }
+    };
+    const square = {
+        kind: "square",
+        sideLength: 5,
+    };
+    console.log(getArea(square));
+    const circle = {
+        kind: "circle",
+        radius: 5,
+    };
+    console.log(getArea(circle));
+}
