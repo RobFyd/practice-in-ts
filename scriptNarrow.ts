@@ -164,6 +164,10 @@
 
       case "square":
         return shape.sideLength ** 2;
+
+      default:
+        const exhaustiveCheck: never = shape;
+        return exhaustiveCheck;  // Error: Type 'Shape' is not assignable to type 'never'. It checks if all cases are handled.
     }
   };
 
