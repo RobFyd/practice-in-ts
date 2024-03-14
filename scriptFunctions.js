@@ -30,3 +30,9 @@ console.log("in operator");
     printToConsole.myName = "and Roby!!";
     greeter(printToConsole);
 }
+// generic function
+{
+    const firstElement = (array) => array[0];
+    const numbers = [2, 5];
+    const firstNumber = firstElement(numbers);
+}

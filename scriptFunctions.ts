@@ -44,3 +44,12 @@ console.log("in operator");
 
   greeter(printToConsole);
 }
+
+// generic function
+{
+  const firstElement = <ItemType>(array: ItemType[]) => array[0];
+
+  const numbers = [2, 5];
+
+  const firstNumber = firstElement(numbers);
+}
