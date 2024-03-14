@@ -10,3 +10,12 @@ console.log("in operator");
     };
     greeter(printToConsole);
 }
+{
+    const greeter = (greetFunctions) => {
+        greetFunctions("Hello, World! 2");
+    };
+    const printToConsole = (text) => {
+        console.log(text);
+    };
+    greeter(printToConsole);
+}
