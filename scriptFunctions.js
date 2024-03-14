@@ -19,6 +19,7 @@ console.log("in operator");
     };
     greeter(printToConsole);
 }
+// function typing with object
 {
     const greeter = (greetFunctions) => {
         greetFunctions(`Hello, World! ${greetFunctions.myName}`);

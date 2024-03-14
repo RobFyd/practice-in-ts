@@ -2,7 +2,7 @@ console.log("in operator");
 
 // function typing
 {
-  const greeter = (greetFunctions) => {
+  const greeter = (greetFunctions: (text: string) => void) => {
     greetFunctions("Hello, World!");
   };
 
