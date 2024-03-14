@@ -2,7 +2,7 @@ console.log("in operator");
 
 // function typing
 {
-  const greeter = (greetFunctions: (text: string) => void) => {
+  const greeter = (greetFunctions) => {
     greetFunctions("Hello, World!");
   };
 
@@ -13,7 +13,7 @@ console.log("in operator");
   greeter(printToConsole);
 }
 {
-  type GreetFunction = (text: string) => void;  // we can store the function type in a variable - alias
+  type GreetFunction = (text: string) => void; // we can store the function type in a variable - alias
 
   const greeter = (greetFunctions: GreetFunction) => {
     greetFunctions("Hello, World! 2");
@@ -22,6 +22,25 @@ console.log("in operator");
   const printToConsole = (text: string) => {
     console.log(text);
   };
+
+  greeter(printToConsole);
+}
+// function typing with object
+{
+  type GreetFunction = {
+    (text: string): void;
+    myName: string;
+  };
+
+  const greeter = (greetFunctions: GreetFunction) => {
+    greetFunctions(`Hello, World! ${greetFunctions.myName}`);
+  };
+
+  const printToConsole = (text: string) => {
+    console.log(text);
+  };
+
+  printToConsole.myName = "and Roby!!";
 
   greeter(printToConsole);
 }

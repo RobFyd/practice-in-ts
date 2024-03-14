@@ -19,3 +19,13 @@ console.log("in operator");
     };
     greeter(printToConsole);
 }
+{
+    const greeter = (greetFunctions) => {
+        greetFunctions(`Hello, World! ${greetFunctions.myName}`);
+    };
+    const printToConsole = (text) => {
+        console.log(text);
+    };
+    printToConsole.myName = "and Roby!!";
+    greeter(printToConsole);
+}
