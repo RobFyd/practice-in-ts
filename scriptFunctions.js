@@ -54,3 +54,12 @@ console.log("in operator");
     console.log(longer("text", "longer text"));
     console.log(longer([], [5]));
 }
+// merge two arrays
+{
+    const mergeArrays = (array1, array2) => [
+        ...array1,
+        ...array2,
+    ];
+    console.log(mergeArrays([1, 2], [3, 4]));
+    console.log(mergeArrays([1, 2], ["text", "text2"])); // we can use the union type
+}
