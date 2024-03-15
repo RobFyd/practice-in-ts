@@ -35,4 +35,16 @@ console.log("in operator");
     const firstElement = (array) => array[0];
     const numbers = [2, 5];
     const firstNumber = firstElement(numbers);
+    console.log(firstNumber);
+}
+// generic function with map
+{
+    const map = (array, transformFunction) => array.map(transformFunction);
+    const numbers = [2.45, 1.16];
+    const numbersFormatted = map(numbers, (number) => number.toFixed(1));
+    console.log(numbersFormatted);
+    // instead of:
+    // const numbers = [2.45, 1.16];
+    // const numbersFormatted = numbers.map((number) => number.toFixed(1));
+    // console.log(numbersFormatted);
 }
