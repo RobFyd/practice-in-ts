@@ -73,3 +73,14 @@ console.log("in operator");
   // const numbersFormatted = numbers.map((number) => number.toFixed(1));
   // console.log(numbersFormatted);
 }
+
+// extends in generic function
+{
+  const longer = <ValueType extends { length: number }>(
+    value1: ValueType,
+    value2: ValueType
+  ) => (value1.length > value2.length ? value1 : value2); // we can use the length property because we know that the type has it
+  
+  console.log(longer("text", "longer text"));
+  console.log(longer([], [5]));
+}
