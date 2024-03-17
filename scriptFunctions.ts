@@ -110,7 +110,7 @@ console.log("in operator");
   const filterArray1 = <ItemType>(
     array: ItemType[],
     filterFunction: (item: ItemType) => boolean
-  ) => array.filter(filterFunction);      // better
+  ) => array.filter(filterFunction); // better
 
   const filterArray2 = <
     ItemType,
@@ -118,7 +118,7 @@ console.log("in operator");
   >(
     array: ItemType[],
     filterFunction: FilterFunctionType
-  ) => array.filter(filterFunction);      // worse    
+  ) => array.filter(filterFunction); // worse
 
   const numbers = [1, 2, 3, 4, 5];
 
@@ -154,4 +154,16 @@ console.log("in operator");
 {
   const dontReturnAnything = () => {};
 }
+
+// unknown
+{
+  const function1 = (value: any) => {
+    value.doSomething(); // we can call any method on the value
+  };
+
+  const function2 = (value: unknown) => {
+    value.doSomething(); // we can't call any method on the value
+  };
+}
+
 

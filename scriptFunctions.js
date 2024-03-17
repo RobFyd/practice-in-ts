@@ -73,7 +73,7 @@ console.log("in operator");
 // good generic function - use fewer function parameters
 {
     const filterArray1 = (array, filterFunction) => array.filter(filterFunction); // better
-    const filterArray2 = (array, filterFunction) => array.filter(filterFunction); // worse    
+    const filterArray2 = (array, filterFunction) => array.filter(filterFunction); // worse
     const numbers = [1, 2, 3, 4, 5];
     console.log(filterArray1(numbers, (number) => number % 2 !== 0));
     console.log(filterArray2(numbers, (number) => number % 2 !== 0));
@@ -100,4 +100,13 @@ console.log("in operator");
 // a function that does nothing
 {
     const dontReturnAnything = () => { };
+}
+// unknown
+{
+    const function1 = (value) => {
+        value.doSomething(); // we can call any method on the value
+    };
+    const function2 = (value) => {
+        value.doSomething(); // we can't call any method on the value
+    };
 }
