@@ -142,5 +142,10 @@ console.log("in operator");
 
 // optionals arguments
 {
-  
+  const greet = (name: string = "Stranger") => {
+    console.log(`Hello, ${name}!`);
+  };
+
+  greet("Roby");
+  greet(undefined);
 }

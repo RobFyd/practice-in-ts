@@ -89,3 +89,11 @@ console.log("in operator");
     greet1("Roby");
     greet2("Roby");
 }
+// optionals arguments
+{
+    const greet = (name = "Stranger") => {
+        console.log(`Hello, ${name}!`);
+    };
+    greet("Roby");
+    greet(undefined);
+}
