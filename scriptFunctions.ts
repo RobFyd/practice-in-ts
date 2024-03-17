@@ -149,3 +149,9 @@ console.log("in operator");
   greet("Roby");
   greet(undefined);
 }
+
+// a function that does nothing
+{
+  const dontReturnAnything = () => {};
+}
+
