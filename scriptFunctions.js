@@ -70,3 +70,11 @@ console.log("in operator");
     const firstElementFirst = firstElement1([2]); // number - better
     const firstElementSecond = firstElement2([2]); // any - worse (dont't use extend if not necessary)
 }
+// good generic function - use fewer function parameters
+{
+    const filterArray1 = (array, filterFunction) => array.filter(filterFunction); // better
+    const filterArray2 = (array, filterFunction) => array.filter(filterFunction); // worse    
+    const numbers = [1, 2, 3, 4, 5];
+    console.log(filterArray1(numbers, (number) => number % 2 !== 0));
+    console.log(filterArray2(numbers, (number) => number % 2 !== 0));
+}

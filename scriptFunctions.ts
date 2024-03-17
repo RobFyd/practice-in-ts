@@ -80,27 +80,48 @@ console.log("in operator");
     value1: ValueType,
     value2: ValueType
   ) => (value1.length > value2.length ? value1 : value2); // we can use the length property because we know that the type has it
-  
+
   console.log(longer("text", "longer text"));
   console.log(longer([], [5]));
 }
 
 // merge two arrays
 {
-const mergeArrays = <ItemType>(array1: ItemType[], array2: ItemType[]) => [
-  ...array1,
-  ...array2,
-];
+  const mergeArrays = <ItemType>(array1: ItemType[], array2: ItemType[]) => [
+    ...array1,
+    ...array2,
+  ];
 
-console.log(mergeArrays([1, 2], [3, 4]));
-console.log(mergeArrays<string | number>([1, 2], ["text", "text2"])); // we can use the union type
+  console.log(mergeArrays([1, 2], [3, 4]));
+  console.log(mergeArrays<string | number>([1, 2], ["text", "text2"])); // we can use the union type
 }
 
 // good generic function - don't limit if not necessary
 {
-const firstElement1 = <ItemType>(array: ItemType[]) => array[0];
-const firstElement2 = <ItemType extends any[]>(array: ItemType) => array[0];
+  const firstElement1 = <ItemType>(array: ItemType[]) => array[0];
+  const firstElement2 = <ItemType extends any[]>(array: ItemType) => array[0];
 
-const firstElementFirst = firstElement1([2]); // number - better
-const firstElementSecond = firstElement2([2]); // any - worse (dont't use extend if not necessary)
+  const firstElementFirst = firstElement1([2]); // number - better
+  const firstElementSecond = firstElement2([2]); // any - worse (dont't use extend if not necessary)
+}
+
+// good generic function - use fewer function parameters
+{
+  const filterArray1 = <ItemType>(
+    array: ItemType[],
+    filterFunction: (item: ItemType) => boolean
+  ) => array.filter(filterFunction);      // better
+
+  const filterArray2 = <
+    ItemType,
+    FilterFunctionType extends (item: ItemType) => boolean
+  >(
+    array: ItemType[],
+    filterFunction: FilterFunctionType
+  ) => array.filter(filterFunction);      // worse    
+
+  const numbers = [1, 2, 3, 4, 5];
+
+  console.log(filterArray1(numbers, (number) => number % 2 !== 0));
+  console.log(filterArray2(numbers, (number) => number % 2 !== 0));
 }
