@@ -63,3 +63,10 @@ console.log("in operator");
     console.log(mergeArrays([1, 2], [3, 4]));
     console.log(mergeArrays([1, 2], ["text", "text2"])); // we can use the union type
 }
+// good generic function - don't limit if not necessary
+{
+    const firstElement1 = (array) => array[0];
+    const firstElement2 = (array) => array[0];
+    const firstElementFirst = firstElement1([2]); // number - better
+    const firstElementSecond = firstElement2([2]); // any - worse (dont't use extend if not necessary)
+}

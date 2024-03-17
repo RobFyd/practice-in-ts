@@ -95,3 +95,12 @@ const mergeArrays = <ItemType>(array1: ItemType[], array2: ItemType[]) => [
 console.log(mergeArrays([1, 2], [3, 4]));
 console.log(mergeArrays<string | number>([1, 2], ["text", "text2"])); // we can use the union type
 }
+
+// good generic function - don't limit if not necessary
+{
+const firstElement1 = <ItemType>(array: ItemType[]) => array[0];
+const firstElement2 = <ItemType extends any[]>(array: ItemType) => array[0];
+
+const firstElementFirst = firstElement1([2]); // number - better
+const firstElementSecond = firstElement2([2]); // any - worse (dont't use extend if not necessary)
+}
