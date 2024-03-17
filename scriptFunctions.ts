@@ -125,3 +125,22 @@ console.log("in operator");
   console.log(filterArray1(numbers, (number) => number % 2 !== 0));
   console.log(filterArray2(numbers, (number) => number % 2 !== 0));
 }
+
+// good generic function - type parameters should appear at least twice
+{
+  const greet1 = <NameType extends string>(name: NameType) => {
+    console.log(`Hello, ${name}!`); // worse - the function does not always have to be genetic
+  };
+
+  const greet2 = (name: string) => {
+    console.log(`Hello, ${name}!`); // better
+  };
+
+  greet1("Roby");
+  greet2("Roby");
+}
+
+// optionals arguments
+{
+  
+}
