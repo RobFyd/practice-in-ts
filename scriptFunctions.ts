@@ -166,4 +166,9 @@ console.log("in operator");
   };
 }
 
-
+// never - function that never returns
+{
+  const error = () => {
+    throw new Error("This is an error!");
+  };
+}

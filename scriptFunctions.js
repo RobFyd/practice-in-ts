@@ -110,3 +110,9 @@ console.log("in operator");
         value.doSomething(); // we can't call any method on the value
     };
 }
+// never - function that never returns
+{
+    const error = () => {
+        throw new Error("This is an error!");
+    };
+}
