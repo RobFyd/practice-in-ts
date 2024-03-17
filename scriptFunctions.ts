@@ -172,3 +172,13 @@ console.log("in operator");
     throw new Error("This is an error!");
   };
 }
+
+// function with any number of parameters
+{
+  const multiply = (factor: number, ...numbers: number[]) =>
+    numbers.map((number) => number * factor);
+
+
+    const numbers = [1, 2, 3];
+  console.log(multiply(5, ...numbers));
+}
