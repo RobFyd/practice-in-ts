@@ -122,3 +122,8 @@ console.log("in operator");
     const numbers = [1, 2, 3];
     console.log(multiply(5, ...numbers));
 }
+// Math.pow
+{
+    const numbers = [2, 5];
+    console.log(Math.pow(...numbers));
+}
