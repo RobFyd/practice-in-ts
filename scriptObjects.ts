@@ -26,3 +26,24 @@
     // someObject.person = {}; // error - we can mutate the object, but not replace it
   };
 }
+{
+  interface WritablePerson {
+    name: string;
+    age: number;
+  }
+
+  interface ReadonlyPerson {
+    readonly name: string;
+    readonly age: number;
+  }
+
+  let writablePerson: WritablePerson = {
+    name: "Person McPersonface",
+    age: 42,
+  };
+
+  let readonlyPerson: ReadonlyPerson = writablePerson;
+
+  writablePerson.age = 100;
+  // readonlyPerson.age = 100; // error
+}
