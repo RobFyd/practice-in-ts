@@ -127,3 +127,12 @@ console.log("in operator");
     const numbers = [2, 5];
     console.log(Math.pow(...numbers));
 }
+// destructuring parameters
+{
+    const rectangleArea = ({ sideA, sideB }) => sideA * sideB;
+    console.log(rectangleArea({ sideA: 5, sideB: 4 }));
+}
+{
+    const rectangleArea = ({ sideA, sideB }) => sideA * sideB;
+    console.log(rectangleArea({ sideA: 52, sideB: 49 }));
+}

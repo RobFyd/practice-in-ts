@@ -189,3 +189,33 @@ console.log("in operator");
 
   console.log(Math.pow(...numbers));
 }
+
+// destructuring parameters
+{
+  const rectangleArea = ({ sideA, sideB }: { sideA: number; sideB: number }) =>
+    sideA * sideB;
+
+  console.log(rectangleArea({ sideA: 5, sideB: 4 }));
+}
+{
+  // a more readable version
+  interface Rectangle {
+    sideA: number;
+    sideB: number;
+  }
+
+  const rectangleArea = ({ sideA, sideB }: Rectangle) => sideA * sideB;
+
+  console.log(rectangleArea({ sideA: 52, sideB: 49 }));
+}
+
+// assigning function with void
+{
+  type FunctionType = () => void;
+
+  const doNothing: FunctionType = () => {};
+
+  const returnTrue: FunctionType = (): void => true;
+
+  const returnValue: Function = returnTrue;
+}
