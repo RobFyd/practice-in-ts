@@ -83,7 +83,7 @@
     radius: number;
   }
 
-  type ColorfulCircle = Colorful & Circle;
+  type ColorfulCircle = Colorful & Circle; // intersection type
 
   const circle: ColorfulCircle = {
     color: "red",
