@@ -23,3 +23,8 @@
     writablePerson.age = 100;
     // readonlyPerson.age = 100; // error
 }
+// index signatures
+{
+    const cars = ["Ford", "Toyota"];
+    // cars.push("Chevy"); // error
+}

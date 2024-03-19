@@ -47,3 +47,13 @@
   writablePerson.age = 100;
   // readonlyPerson.age = 100; // error
 }
+
+// index signatures
+{
+  interface StringArray {
+    [index: number]: string;
+  }
+
+  const cars: StringArray = ["Ford", "Toyota"];
+  // cars.push("Chevy"); // error
+}
