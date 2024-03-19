@@ -28,3 +28,9 @@
     const cars = ["Ford", "Toyota"];
     // cars.push("Chevy"); // error
 }
+// extended index signatures
+// when one type is a more specific version of the other type
+{
+    const dog = { name: "Fido", breed: "Golden Retriever" };
+    const animal = dog;
+}

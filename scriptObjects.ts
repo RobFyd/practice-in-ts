@@ -57,3 +57,18 @@
   const cars: StringArray = ["Ford", "Toyota"];
   // cars.push("Chevy"); // error
 }
+
+// extended index signatures
+// when one type is a more specific version of the other type
+{
+  interface Animal {
+    name: string;
+  }
+
+  interface Dog extends Animal {
+    breed: string;
+  }
+
+  const dog: Dog = { name: "Fido", breed: "Golden Retriever" };
+  const animal: Animal = dog;
+}
