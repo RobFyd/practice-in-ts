@@ -72,3 +72,23 @@
   const dog: Dog = { name: "Fido", breed: "Golden Retriever" };
   const animal: Animal = dog;
 }
+
+// intersection types
+{
+  interface Colorful {
+    color: string;
+  }
+
+  interface Circle {
+    radius: number;
+  }
+
+  type ColorfulCircle = Colorful & Circle;
+
+  const circle: ColorfulCircle = {
+    color: "red",
+    radius: 42,
+  };
+
+  console.log(circle);
+}

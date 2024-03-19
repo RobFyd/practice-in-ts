@@ -34,3 +34,11 @@
     const dog = { name: "Fido", breed: "Golden Retriever" };
     const animal = dog;
 }
+// intersection types
+{
+    const circle = {
+        color: "red",
+        radius: 42,
+    };
+    console.log(circle);
+}
