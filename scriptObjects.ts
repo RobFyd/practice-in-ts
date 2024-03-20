@@ -92,3 +92,19 @@
 
   console.log(circle);
 }
+
+// generic types objects
+{
+  interface APIResponse<Type> {
+    statusCode: number;
+    error: boolean;
+    data: any;
+  }
+
+  interface User {
+    id: number;
+    name: string;
+  }
+
+  type APIUserResponse = APIResponse<User>; // generic type
+}

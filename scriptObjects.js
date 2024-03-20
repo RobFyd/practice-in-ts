@@ -42,3 +42,6 @@
     };
     console.log(circle);
 }
+// generic types objects
+{
+}
