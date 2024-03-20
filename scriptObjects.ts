@@ -98,7 +98,7 @@
   interface APIResponse<Type> {
     statusCode: number;
     error: boolean;
-    data: any;
+    data: Type;
   }
 
   interface User {
