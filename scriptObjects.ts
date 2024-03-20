@@ -116,3 +116,10 @@
   type APIMovieResponse = APIResponse<Movie>; // generic type
 }
 
+// generic types in a different way - helpers
+{
+  type OrNull<Type> = Type | null;
+  type OneOrMany<Type> = Type | Type[];
+  type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>;
+  type OneOrManyOrNullStrings = OneOrManyOrNull<string>;
+}

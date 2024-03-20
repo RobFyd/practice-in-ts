@@ -45,3 +45,6 @@
 // generic types objects
 {
 }
+// generic types in a different way - helpers
+{
+}
