@@ -107,4 +107,12 @@
   }
 
   type APIUserResponse = APIResponse<User>; // generic type
+
+  interface Movie {
+    id: number;
+    title: string;
+  }
+
+  type APIMovieResponse = APIResponse<Movie>; // generic type
 }
+
