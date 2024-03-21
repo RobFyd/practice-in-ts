@@ -50,6 +50,13 @@
 }
 // array types
 {
-    const numbers1 = [];
+    const numbers1 = []; // abbreviated syntax
     const numbers2 = []; // same as above
+}
+// readonly arrays
+{
+    const doSomething = (array) => {
+        array[5]; // ok
+        // array.push(42); // error
+    };
 }

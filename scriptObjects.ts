@@ -126,6 +126,14 @@
 
 // array types
 {
-  const numbers1: number[] = [];
+  const numbers1: number[] = []; // abbreviated syntax
   const numbers2: Array<number> = []; // same as above
+}
+
+// readonly arrays
+{
+  const doSomething = (array: ReadonlyArray<number>) => {
+    array[5]; // ok
+    // array.push(42); // error
+  };
 }
