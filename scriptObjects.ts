@@ -123,3 +123,9 @@
   type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>;
   type OneOrManyOrNullStrings = OneOrManyOrNull<string>;
 }
+
+// array types
+{
+  const numbers1: number[] = [];
+  const numbers2: Array<number> = []; // same as above
+}

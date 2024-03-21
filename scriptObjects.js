@@ -48,3 +48,8 @@
 // generic types in a different way - helpers
 {
 }
+// array types
+{
+    const numbers1 = [];
+    const numbers2 = []; // same as above
+}
