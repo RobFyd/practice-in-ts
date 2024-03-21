@@ -60,3 +60,11 @@
         // array.push(42); // error
     };
 }
+{
+    const numbers = [1, 2, 3]; // create a readonly array
+}
+{
+    let numbers = [3, 4, 5];
+    let readonlyNumbers = numbers; // readonly arr to not readonly arr is ok
+    // numbers = readonlyNumbers; // not readonly arr to readonly arr is not ok
+}
