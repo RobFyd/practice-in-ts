@@ -142,8 +142,19 @@
 }
 {
   let numbers = [3, 4, 5];
-  
+
   let readonlyNumbers: readonly number[] = numbers; // readonly arr to not readonly arr is ok
 
   // numbers = readonlyNumbers; // not readonly arr to readonly arr is not ok
+}
+
+// tuple types
+{
+  const tupleArr: [string, number] = ["hello", 42];
+  
+  const myString = tupleArr[0];
+  const myNumber = tupleArr[1];
+  // const doesNotExist = tupleArr[2]; // undefined
+  const [myString2, myNumber2] = tupleArr; // destructuring
+  tupleArr.length; // 2
 }
