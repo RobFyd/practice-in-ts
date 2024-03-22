@@ -95,3 +95,7 @@
     const tupleArr = ["hello", 42, true, false, true];
     // tupleArr[0] = "hi"; // error
 }
+// declaring a readonly tuple type
+{
+    const array = ["hello", 42];
+}

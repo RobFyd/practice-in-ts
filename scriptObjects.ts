@@ -181,3 +181,8 @@
   const tupleArr: readonly [string, number, ...boolean[]] = ["hello", 42, true, false, true];
   // tupleArr[0] = "hi"; // error
 }
+
+// declaring a readonly tuple type
+{
+  const array = ["hello", 42] as const;
+}
