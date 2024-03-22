@@ -85,3 +85,13 @@
     tupleArr[2] = undefined; // ok
     tupleArr.length; // 2 | 3
 }
+// rest elements in tuples
+{
+    const tupleArr = ["hello", 42, true, false, true];
+    tupleArr.length; // number
+}
+// readonly tuples
+{
+    const tupleArr = ["hello", 42, true, false, true];
+    // tupleArr[0] = "hi"; // error
+}

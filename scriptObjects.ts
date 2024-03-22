@@ -168,3 +168,16 @@
   tupleArr[2] = undefined; // ok
   tupleArr.length; // 2 | 3
 }
+
+// rest elements in tuples
+{
+  const tupleArr: [string, number, ...boolean[]] = ["hello", 42, true, false, true];
+
+  tupleArr.length; // number
+}
+
+// readonly tuples
+{
+  const tupleArr: readonly [string, number, ...boolean[]] = ["hello", 42, true, false, true];
+  // tupleArr[0] = "hi"; // error
+}
