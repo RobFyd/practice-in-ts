@@ -77,3 +77,11 @@
     const [myString2, myNumber2] = tupleArr; // destructuring
     tupleArr.length; // 2
 }
+// optional elements in tuples
+{
+    const tupleArr = ["hello", 42];
+    const third = tupleArr[2]; // boolean | undefined
+    tupleArr[2] = true; // ok
+    tupleArr[2] = undefined; // ok
+    tupleArr.length; // 2 | 3
+}
