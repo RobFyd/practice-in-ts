@@ -37,3 +37,6 @@ console.log("scriptManipulation.ts");
 // mapping types - keyof with "-" modifier
 {
 }
+// template literal types
+{
+}

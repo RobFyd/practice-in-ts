@@ -85,3 +85,10 @@ let surname: typeof name = "Rob"; // must "Rob"
         -readonly [Property in keyof Person]-?: string; // -readonly removes the readonly modifier and -? removes the optional modifier
     }
 }
+
+// template literal types
+{
+    type Currency = "PLN" | "USD" | "EUR" | "GBP";
+
+    type CurrencyConvert = `${Lowercase<Currency>}-${Currency}`; // "PLN-PLN" | "PLN-USD" | "PLN-EUR" | "PLN-GBP" | "USD-PLN" | "USD-USD" | "USD-EUR" | "USD-GBP" | "EUR-PLN" | "EUR-USD" | "EUR-EUR" | "EUR-GBP" | "GBP-PLN" | "GBP-USD" | "GBP-EUR" | "GBP-GBP"
+}
