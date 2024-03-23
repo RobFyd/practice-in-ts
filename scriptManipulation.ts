@@ -31,3 +31,13 @@ let surname: typeof name = "Rob"; // must "Rob"
 
     type PersonProperty = keyof typeof person; // "name" | "surname" | "age"
 }
+
+// the type returned by functions - typeof
+{
+    const getPerson = () => ({
+        name: "Rob"
+    });
+
+    type Person = ReturnType<typeof getPerson>; // { name: string }
+    type PersonName = Person["name"]; // string
+}

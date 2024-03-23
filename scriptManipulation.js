@@ -18,3 +18,9 @@ console.log("scriptManipulation.ts");
         age: 30
     };
 }
+// the type returned by functions - typeof
+{
+    const getPerson = () => ({
+        name: "Rob"
+    });
+}
