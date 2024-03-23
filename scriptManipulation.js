@@ -40,3 +40,6 @@ console.log("scriptManipulation.ts");
 // template literal types
 {
 }
+// another mapping types example
+{
+}

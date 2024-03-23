@@ -92,3 +92,15 @@ let surname: typeof name = "Rob"; // must "Rob"
 
     type CurrencyConvert = `${Lowercase<Currency>}-${Currency}`; // "PLN-PLN" | "PLN-USD" | "PLN-EUR" | "PLN-GBP" | "USD-PLN" | "USD-USD" | "USD-EUR" | "USD-GBP" | "EUR-PLN" | "EUR-USD" | "EUR-EUR" | "EUR-GBP" | "GBP-PLN" | "GBP-USD" | "GBP-EUR" | "GBP-GBP"
 }
+
+// another mapping types example
+{
+    interface Person {
+        name: string;
+        age: number;
+    }
+
+    type MyPerson = {
+        [Property in keyof Person as `my${Capitalize<Property>}`]: Person[Property];
+    }
+}
