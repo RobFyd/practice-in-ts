@@ -24,3 +24,10 @@ console.log("scriptManipulation.ts");
         name: "Rob"
     });
 }
+// extracting an array type element - typeof
+{
+    const persons = [
+        { name: "Rob", age: 30 },
+        { name: "Bob", age: 20 }
+    ];
+}

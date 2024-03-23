@@ -41,3 +41,17 @@ let surname: typeof name = "Rob"; // must "Rob"
     type Person = ReturnType<typeof getPerson>; // { name: string }
     type PersonName = Person["name"]; // string
 }
+
+// extracting an array type element - typeof
+{
+    const persons = [
+        { name: "Rob", age: 30 },
+        { name: "Bob", age: 20 }
+    ];
+
+    type Person = typeof persons[number]; // { name: string; age: number; }
+
+    type ConditionalType = { name: string; age: number; } extends Person 
+    ? number
+    : string; 
+}
