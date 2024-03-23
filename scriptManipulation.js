@@ -31,3 +31,6 @@ console.log("scriptManipulation.ts");
         { name: "Bob", age: 20 }
     ];
 }
+// mapping types - keyof
+{
+}

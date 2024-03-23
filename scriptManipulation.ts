@@ -55,3 +55,20 @@ let surname: typeof name = "Rob"; // must "Rob"
     ? number
     : string; 
 }
+
+// mapping types - keyof
+{
+    interface Person {
+        name: string;
+        surname: string;
+        age: number;
+    }
+
+    type PersonStrings = {
+        [Property in keyof Person]: string;
+    }; // { name: string; surname: string; age: string; }
+
+    type PersonOptional = {
+        [Property in keyof Person]?: Person[Property];
+    }; // { name?: string; surname?: string; age?: number; }
+}
