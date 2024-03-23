@@ -8,4 +8,13 @@ console.log("scriptManipulation.ts");
 {
     const name = "Rob";
     console.log(typeof name); // string
+    let surname = "Rob"; // must "Rob"
+}
+// keyof and typeof can be used together
+{
+    const person = {
+        name: "Rob",
+        surname: "Soares",
+        age: 30
+    };
 }

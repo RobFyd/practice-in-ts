@@ -20,3 +20,14 @@ console.log(typeof name); // string
 
 let surname: typeof name = "Rob"; // must "Rob"
 }
+
+// keyof and typeof can be used together
+{
+    const person = {
+        name: "Rob",
+        surname: "Soares",
+        age: 30
+    };
+
+    type PersonProperty = keyof typeof person; // "name" | "surname" | "age"
+}
