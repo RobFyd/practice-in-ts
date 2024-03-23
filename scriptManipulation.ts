@@ -72,3 +72,16 @@ let surname: typeof name = "Rob"; // must "Rob"
         [Property in keyof Person]?: Person[Property];
     }; // { name?: string; surname?: string; age?: number; }
 }
+
+// mapping types - keyof with "-" modifier
+{
+    interface Person {
+        name?: string;
+        surname: string;
+        readonly age: number;
+    }
+
+    type PersonConcrete = {
+        -readonly [Property in keyof Person]-?: string; // -readonly removes the readonly modifier and -? removes the optional modifier
+    }
+}

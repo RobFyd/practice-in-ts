@@ -34,3 +34,6 @@ console.log("scriptManipulation.ts");
 // mapping types - keyof
 {
 }
+// mapping types - keyof with "-" modifier
+{
+}
