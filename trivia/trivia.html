@@ -1,36 +1,78 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link href="trivia.css" rel="stylesheet" />
-    <title>Trivia!</title>
-    <script>
-      // TODO: Add code to check answers to questions
-    </script>
-  </head>
-  <body>
-    <div class="header">
-      <h1>Trivia!</h1>
-    </div>
 
-    <div class="container">
-      <div class="section">
-        <h2>Part 1: Multiple Choice</h2>
-        <h3>???</h3>
-        <hr />
-        <!-- TODO: Add multiple choice question here -->
-      </div>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // run script when DOM is loaded
+            document.addEventListener("DOMContentLoaded", function() {
 
-      <div class="section">
-        <h2>Part 2: Free Response</h2>
-        <h3>???</h3>
-        <hr />
-        <!-- TODO: Add free response question here -->
-      </div>
-    </div>
-  </body>
+                //correct answer
+                let correct = document.querySelector(".js-correct");
+                correct.addEventListener("click", function() {
+                    correct.style.backgroundColor = "green";
+                    document.querySelector(".js-feedback1").innerHTML = "Correct!!!";
+                });
+
+                //incorrect answer
+                let incorrect = document.querySelectorAll(".js-incorrect");
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener("click", function() {
+                        incorrect[i].style.backgroundColor = "crimson";
+                        document.querySelector(".js-feedback1").innerHTML = "Incorrect :(";
+                    });
+                }
+
+                //free response
+                document.querySelector(".js-answer").addEventListener("click", function () {
+                    let input = document.querySelector(".js-input");
+                    if (input.value === "Java Script") {
+                        input.style.backgroundColor = "green";
+                        document.querySelector(".js-feedback2").innerHTML = "Correct!!!";
+                    } else {
+                        input.style.backgroundColor = "crimson";
+                        document.querySelector(".js-feedback2").innerHTML = "Incorrect :(";
+                    }
+                })
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which web technology is a real programming language?</h3>
+                <p class="js-feedback1"></p>
+                <div class="buttons">
+                    <button class="button js-incorrect">HTML</button>
+                    <button class="button js-incorrect">CSS</button>
+                    <button class="button js-correct">JS</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What does the abbreviation JS stand for?</h3>
+                <p class="js-feedback2"></p>
+                <div>
+                    <input class="js-input" autocomplete="off" autofocus placeholder="answer" type="text" />
+                    <button class="button js-answer">Check Answer</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
 </html>
