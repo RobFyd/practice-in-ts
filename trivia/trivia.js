@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     //incorrect answer
     let incorrect = document.querySelectorAll(".js-incorrect");
     for (let i = 0; i < incorrect.length; i++) {
-        incorrect[i].addEventListener("click", function () {
-            incorrect[i].style.backgroundColor = "crimson";
+        const incorrectButton = incorrect[i];
+        incorrectButton.addEventListener("click", function () {
+            incorrectButton.style.backgroundColor = "crimson";
             document.querySelector(".js-feedback1").innerHTML = "Incorrect :(";
         });
     }
